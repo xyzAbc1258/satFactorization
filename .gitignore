@@ -1,0 +1,12 @@
+.stack-work/
+out
+myproj.cabal
+*~
+test*
+timeTests
+result*
+.idea
+*.lock
+*.exe
+*.in
+*.iml

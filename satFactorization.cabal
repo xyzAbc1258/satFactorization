@@ -1,0 +1,69 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 3c7d374e97658aaf5fa398b5034bb9a289d87f83e48583e14577d3a746540e93
+
+name:           satFactorization
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/satFactorization#readme>
+homepage:       https://github.com/githubuser/satFactorization#readme
+bug-reports:    https://github.com/githubuser/satFactorization/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2020 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/satFactorization
+
+library
+  exposed-modules:
+      Lib
+      BinaryExpr
+      ExprBuilder
+      SatIntegration
+      Common
+  other-modules:
+      Paths_satFactorization
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+      , mtl
+      , containers
+      , minisat-solver == 0.1
+  default-language: Haskell2010
+
+executable satFactorization-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_satFactorization
+  hs-source-dirs:
+      app
+  ghc-options: -rtsopts
+  build-depends:
+      base >=4.7 && <5
+    , satFactorization
+  default-language: Haskell2010
+
+test-suite satFactorization-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_satFactorization
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , satFactorization
+  default-language: Haskell2010
