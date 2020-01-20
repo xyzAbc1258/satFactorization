@@ -29,8 +29,8 @@ main :: IO ()
 main = do
   args <- getArgs
   num <- case args of
-    [] -> readInt
     [a] -> return (asInt a)
+    _ -> readInt
   let (s,bits) = sizeInBits num
   let ((fstN, _, number), exprs) = runBuilder s
   let expr = transformToCNF $ And [setBits number (bits ++ zeros), exprs]
